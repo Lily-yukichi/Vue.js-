@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="uft-8">
+    <title>Vue.js App</title>
+    <link href="ねこ本.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <!--この#appの内側にテンプレートを書き込む-->
+    <p>{{ message }}</p>
+    <p>Hello Vue.js!</p>
+
+    <ol>
+        <li v-for="item in list">{{ item }}</li>
+    </ol>
+
+    <ol>
+        <li>りんご</li>
+        <li>ばなな</li>
+        <li>いちご</li>
+    </ol>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        date: {
+            message: 'Hello Vue.js!'
+        }
+    })
+
+    console.log(app.message)
+
+    var app =new Vue({
+        el: '#app',
+        data: {
+            list: ['りんご','ばなな','いちご']
+        }
+    })
+
+    app.list.push('おれんじ')
+
+</script>
+</body>
+</html>
